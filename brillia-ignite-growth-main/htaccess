@@ -1,0 +1,10 @@
+# Ativa regravação de URL
+RewriteEngine On
+
+# 1) redireciona brilliacode.com.br → www.brilliacode.com.br
+RewriteCond %{HTTP_HOST} ^brilliacode\.com\.br [NC]
+RewriteRule ^(.*)$ https://www.brilliacode.com.br/$1 [L,R=301]
+
+# 2) força HTTP → HTTPS em qualquer host
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]

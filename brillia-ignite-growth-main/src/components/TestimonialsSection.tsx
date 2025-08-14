@@ -9,10 +9,12 @@ const TestimonialsSection = () => {
       rating: 5
     },
     {
-      text: "A automação com IA economizou 3 horas por dia no meu atendimento. Agora posso focar no que realmente importa: meus clientes.",
-      author: "Jéssica",
-      business: "Loja de Roupas",
-      rating: 5
+      text: "A visibilidade e o engajamento da nossa página cresceram muito depois do trabalho da BrilliaCode. As pessoas passaram a comentar, compartilhar e interagir com frequência — parecia outra conta.",
+      author: "@rodeiopinhalao",
+      business: "Evento Local",
+      rating: 5,
+      avatar: "/assets/logo_rodeio.png",
+      link: "https://www.instagram.com/rodeiopinhalao"
     },
     {
       text: "O visual da minha página agora combina com o profissionalismo que ofereço. Meus clientes perceberam a diferença na hora.",
@@ -33,10 +35,10 @@ const TestimonialsSection = () => {
             Resultados reais de negócios que confiaram na BrilliaCode para crescer digitalmente.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div 
+            <div
               key={index}
               className="bg-white p-8 rounded-xl shadow-sm border border-border hover:shadow-lg transition-smooth"
             >
@@ -45,18 +47,33 @@ const TestimonialsSection = () => {
                   <Star key={i} className="w-5 h-5 text-primary fill-current" />
                 ))}
               </div>
-              
+
               <blockquote className="text-brillia-secondary font-inter-medium leading-relaxed mb-6">
                 "{testimonial.text}"
               </blockquote>
-              
-              <div className="border-t border-border pt-4">
-                <p className="font-inter-semibold text-brillia-primary">
-                  {testimonial.author}
-                </p>
-                <p className="text-brillia-secondary font-inter-medium text-sm">
-                  {testimonial.business}
-                </p>
+
+              <div className="border-t border-border pt-4 flex items-center gap-4">
+                {testimonial.avatar && (
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.author}
+                    className="w-10 h-10 rounded-full object-cover border border-border"
+                  />
+                )}
+                <div>
+                  <p className="font-inter-semibold text-brillia-primary">
+                    {testimonial.link ? (
+                      <a href={testimonial.link} target="_blank" rel="noopener noreferrer">
+                        {testimonial.author}
+                      </a>
+                    ) : (
+                      testimonial.author
+                    )}
+                  </p>
+                  <p className="text-brillia-secondary font-inter-medium text-sm">
+                    {testimonial.business}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
