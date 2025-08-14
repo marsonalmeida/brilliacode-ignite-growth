@@ -20,4 +20,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Landing Pages de Portfólio -->
+  <url>
+    <loc>https://www.brilliacode.com.br/servicos/agropecuaria-local</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brilliacode.com.br/servicos/mercado-local/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brilliacode.com.br/servicos/moveis-planejados/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
