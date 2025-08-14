@@ -42,7 +42,6 @@ const plans: Plan[] = [
     price: "R$ 897",
     oldPrice: "R$ 1.097",
     features: [
-      "Tudo do plano Essencial",
       "12 posts + 4 reels/mês",
       "Stories em destaque (até 3 por semana)",
       "Planejamento estratégico (persona e concorrência)",
@@ -61,7 +60,9 @@ const plans: Plan[] = [
     price: "R$ 1.497",
     oldPrice: "R$ 1.797",
     features: [
-      "Tudo do plano Visibilidade",
+      "12 posts + 4 reels/mês",
+      "Stories em destaque (até 3 por semana)",
+      "Landing page otimizada",
       "Consultoria mensal (4h de reuniões e orientação)",
       "Relatórios detalhados com indicadores de performance",
       "Manutenção de automações com IA (WhatsApp ou Instagram)",

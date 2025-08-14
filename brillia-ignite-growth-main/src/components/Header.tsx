@@ -28,14 +28,14 @@ const Header = () => {
         </nav>
 
         <div className="flex space-x-3 items-center relative">
-          <Button 
+          {/* <Button 
             asChild
             className="bg-primary hover:bg-[hsl(var(--brillia-primary-hover))] text-black font-inter-semibold"
           >
             <a href="https://wa.me/5543988508487" target="_blank" rel="noopener noreferrer">
               Solicitar Avaliação
             </a>
-          </Button>
+          </Button> */}
 
           <div className="relative group w-full">
             <Button 
