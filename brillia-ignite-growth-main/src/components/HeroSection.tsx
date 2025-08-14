@@ -17,7 +17,6 @@ const HeroSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // mantém o envio à planilha (mesmo endpoint do ContactSection)
     const params = new URLSearchParams({
       name: formData.name,
       phone: formData.phone,
@@ -30,7 +29,6 @@ const HeroSection = () => {
       `https://script.google.com/macros/s/AKfycbwOpwybiFwBUfpYXzoWT9PSu-4Pfz5-UsajoVVgA-6jdSpcHptm01Oo_tfBiFGSvXPQrg/exec?${params}`
     ).catch((err) => console.error("Erro ao enviar para planilha:", err));
 
-    // mensagem enxuta para WhatsApp
     const message =
       `Olá! Quero receber a avaliação gratuita.\n\n` +
       `*Nome:* ${formData.name}\n` +
@@ -45,11 +43,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="bg-brillia-dark text-white pt-8 pb-12 md:pb-16 px-6 min-h-screen md:min-h-0">
-
+    <section className="bg-brillia-dark text-white pt-8 pb-12 md:pb-16 px-6 min-h-screen md:min-h-0 overflow-x-hidden">
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Coluna esquerda: copy + CTAs */}
+          {/* Coluna esquerda */}
           <div className="space-y-8">
             <h1 className="text-4xl md:text-6xl font-inter-semibold leading-tight">
               Sua marca pode ser pequena, mas sua presença{" "}
@@ -87,8 +84,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Coluna direita: Card com formulário de baixa fricção */}
-          <div className="relative">
+          {/* Coluna direita */}
+          <div className="relative overflow-hidden">
             <Card className="p-6 md:p-8 bg-background/90 backdrop-blur-xl border border-border shadow-xl rounded-xl mb-6 md:mb-8 relative z-10">
               <h2 className="text-2xl font-inter-semibold text-foreground mb-2">
                 Receba sua avaliação gratuita
@@ -137,7 +134,8 @@ const HeroSection = () => {
                     htmlFor="email"
                     className="block text-sm font-medium text-foreground mb-2"
                   >
-                    Email <span className="text-muted-foreground">(opcional)</span>
+                    Email{" "}
+                    <span className="text-muted-foreground">(opcional)</span>
                   </label>
                   <Input
                     id="email"
@@ -149,13 +147,19 @@ const HeroSection = () => {
                   />
                 </div>
 
+                {/* Botão adaptável */}
                 <Button
                   type="submit"
                   variant="default"
                   size="lg"
                   className="w-full"
                 >
-                  Receber avaliação via WhatsApp →
+                  <span className="hidden sm:inline">
+                    Receber avaliação via WhatsApp →
+                  </span>
+                  <span className="inline sm:hidden">
+                    Avaliação no WhatsApp →
+                  </span>
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">
@@ -165,15 +169,16 @@ const HeroSection = () => {
               </form>
             </Card>
 
-            {/* acentos visuais mantidos para elegância do hero */}
+            {/* Bolas decorativas ajustadas */}
             <div
               className="
-    pointer-events-none absolute top-0 right-0
-    -translate-y-[12px] translate-x-[-14px]
-    w-20 h-20 bg-primary/20 rounded-full animate-pulse
-    z-30
-  "
-            />            <div className="pointer-events-none absolute -bottom-4 -left-4 w-12 h-12 bg-primary/30 rounded-full animate-pulse z-0" />
+                pointer-events-none absolute top-0 right-0
+                -translate-y-[12px] translate-x-[-6px]
+                w-20 h-20 bg-primary/20 rounded-full animate-pulse
+                z-30
+              "
+            />
+            <div className="pointer-events-none absolute -bottom-4 -left-4 w-12 h-12 bg-primary/30 rounded-full animate-pulse z-0" />
           </div>
         </div>
       </div>
